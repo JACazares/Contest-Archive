@@ -82,15 +82,14 @@ int main ()
 			else
 			{
 
-			rpnt = 0;
-			ans = 0;
-			for ( ll lpnt = 0; lpnt < A.size(); lpnt++ )
-			{
-				for ( rpnt = max ( rpnt, lpnt + 1) ; rpnt < A.size() && A[rpnt].first - A[lpnt].first < C; rpnt++ ) ;
-				if ( rpnt < A.size() && A[rpnt].first - A[lpnt].first >= C )
-					ans += (A[lpnt].second * sum[rpnt]);
-			}
-
+				rpnt = 0;
+				ans = 0;
+				for ( ll lpnt = 0; lpnt < A.size(); lpnt++ )
+				{
+					for ( rpnt = max ( rpnt, lpnt + 1) ; rpnt < A.size() && A[rpnt].first - A[lpnt].first < C; rpnt++ ) ;
+					if ( rpnt < A.size() && A[rpnt].first - A[lpnt].first >= C )
+						ans += (A[lpnt].second * sum[rpnt]);
+				}
 			}
 
 			cout << ans << "\n";
